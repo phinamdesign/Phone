@@ -1,0 +1,43 @@
+#wrap{
+    width: 800px;
+    margin: 40px auto;
+}
+#wrapper1{
+    width: 185px;
+    height: 210px;
+    float: left;
+}
+#wrapper2{
+    width: 185px;
+    height: 210px;
+    float: right;
+}
+
+#table button,#table2 button{
+    width: 70px;
+    height: 35px;
+}
+#table,#table2{
+    width: 300px;
+    margin: 8px auto;
+    background: aquamarine;
+    border: 1px solid rebeccapurple;
+}
+#result,#result2{
+    margin:0px 8px;
+    width: 285px;
+    height: 30px;
+}
+#battery,#battery2{
+    width: 40px;
+    height: 10px;
+    float: right;
+    margin: 5px;
+}
+#display,#display2{
+    border: 1px solid rebeccapurple;
+    width: 285px;
+    height: 60px;
+    margin: 8px;
+    background-color: beige;
+}
