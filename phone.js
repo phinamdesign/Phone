@@ -4,20 +4,41 @@ function Mobile(battery, draft, inbox, sent, status) {
     this.inbox = inbox;
     this.sent = sent;
     this.status = status;
-    document.getElementById("battery").value = battery+"%";
-    document.getElementById("battery2").value = battery+"%";
     //Kiểm tra trạng thái pin
     this.getStatus = function () {
-        document.getElementById("display").innerHTML = this.status;
+        if (this.status == true) {
+            document.getElementById("notification").innerHTML = "Đang bật";
+        }else {
+            document.getElementById("notification").innerHTML = "Đang tắt";
+        }
     }
 
     //Sạc pin
     this.chargeBattery = function () {
-
-        if (this.battery < 90)
+        if (this.battery<100){
             this.battery ++;
-            document.getElementById("battery").innerHTML = this.battery;
+            document.getElementById("battery").value = this.battery+"%";
+        }
+
     }
+
+    this.chargeBattery2 = function () {
+        if (this.battery < 100)
+            this.battery ++;
+        document.getElementById("battery2").value = this.battery+"%";
+    }
+    
+    // Bắt đầu soạn tin 
+    this.writeStart = function () {
+        this.battery --;
+        document.getElementById("battery").value = this.battery+"%";
+    }
+
+    this.writeStart2 = function () {
+        this.battery --;
+        document.getElementById("battery2").value = this.battery+"%";
+    }
+
     // Viết tin nhắn , lưu nháp
     this.writeMessage = function (newMessage) {
         var newMessage = document.getElementById("message").value;
@@ -101,5 +122,5 @@ function Mobile(battery, draft, inbox, sent, status) {
         document.getElementById("battery2").value = this.battery+"%";
     }
 }
-var iphone = new Mobile(100,[],[],[],true);
+var iphone = new Mobile(100,[],[],[],false);
 var samSung = new Mobile(100,[],[],[],true);
